@@ -8,10 +8,9 @@ class GetDietReportUseCase {
 
   GetDietReportUseCase(this._dietRepository);
 
-  Future<DietReport> call({DateTime? date}) async {
-    final selectedDate = date ??= DateTime.now();
-    final diet = await _dietRepository.loadDailyDiet(
-        selectedDate.year, selectedDate.month, selectedDate.day);
+  Future<DietReport> call(DateTime date) async {
+    final diet =
+        await _dietRepository.loadDailyDiet(date.year, date.month, date.day);
 
     // 임시 데이터: 식단 정보를 가지고 영양소 구하는 로직 작성
     final nutrient = Nutrient(

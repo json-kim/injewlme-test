@@ -19,7 +19,7 @@ Future<List<SingleChildWidget>> setProviders() async {
 
   // 뷰모델
   final List<SingleChildWidget> viewModels = [
-    Provider(
+    ChangeNotifierProvider(
       create: (context) => ReportViewModel(
         context.read<GetDietReportUseCase>(),
       ),
