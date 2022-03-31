@@ -21,6 +21,12 @@ class _$ReportEventTearOff {
   LoadReport loadReport() {
     return const LoadReport();
   }
+
+  SelectMeal selectMeal(MealType mealType) {
+    return SelectMeal(
+      mealType,
+    );
+  }
 }
 
 /// @nodoc
@@ -31,32 +37,38 @@ mixin _$ReportEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadReport,
+    required TResult Function(MealType mealType) selectMeal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadReport,
+    TResult Function(MealType mealType)? selectMeal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadReport,
+    TResult Function(MealType mealType)? selectMeal,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadReport value) loadReport,
+    required TResult Function(SelectMeal value) selectMeal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadReport value)? loadReport,
+    TResult Function(SelectMeal value)? selectMeal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadReport value)? loadReport,
+    TResult Function(SelectMeal value)? selectMeal,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -118,6 +130,7 @@ class _$LoadReport implements LoadReport {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadReport,
+    required TResult Function(MealType mealType) selectMeal,
   }) {
     return loadReport();
   }
@@ -126,6 +139,7 @@ class _$LoadReport implements LoadReport {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadReport,
+    TResult Function(MealType mealType)? selectMeal,
   }) {
     return loadReport?.call();
   }
@@ -134,6 +148,7 @@ class _$LoadReport implements LoadReport {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadReport,
+    TResult Function(MealType mealType)? selectMeal,
     required TResult orElse(),
   }) {
     if (loadReport != null) {
@@ -146,6 +161,7 @@ class _$LoadReport implements LoadReport {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadReport value) loadReport,
+    required TResult Function(SelectMeal value) selectMeal,
   }) {
     return loadReport(this);
   }
@@ -154,6 +170,7 @@ class _$LoadReport implements LoadReport {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadReport value)? loadReport,
+    TResult Function(SelectMeal value)? selectMeal,
   }) {
     return loadReport?.call(this);
   }
@@ -162,6 +179,7 @@ class _$LoadReport implements LoadReport {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadReport value)? loadReport,
+    TResult Function(SelectMeal value)? selectMeal,
     required TResult orElse(),
   }) {
     if (loadReport != null) {
@@ -173,4 +191,136 @@ class _$LoadReport implements LoadReport {
 
 abstract class LoadReport implements ReportEvent {
   const factory LoadReport() = _$LoadReport;
+}
+
+/// @nodoc
+abstract class $SelectMealCopyWith<$Res> {
+  factory $SelectMealCopyWith(
+          SelectMeal value, $Res Function(SelectMeal) then) =
+      _$SelectMealCopyWithImpl<$Res>;
+  $Res call({MealType mealType});
+}
+
+/// @nodoc
+class _$SelectMealCopyWithImpl<$Res> extends _$ReportEventCopyWithImpl<$Res>
+    implements $SelectMealCopyWith<$Res> {
+  _$SelectMealCopyWithImpl(SelectMeal _value, $Res Function(SelectMeal) _then)
+      : super(_value, (v) => _then(v as SelectMeal));
+
+  @override
+  SelectMeal get _value => super._value as SelectMeal;
+
+  @override
+  $Res call({
+    Object? mealType = freezed,
+  }) {
+    return _then(SelectMeal(
+      mealType == freezed
+          ? _value.mealType
+          : mealType // ignore: cast_nullable_to_non_nullable
+              as MealType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectMeal implements SelectMeal {
+  const _$SelectMeal(this.mealType);
+
+  @override
+  final MealType mealType;
+
+  @override
+  String toString() {
+    return 'ReportEvent.selectMeal(mealType: $mealType)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SelectMeal &&
+            const DeepCollectionEquality().equals(other.mealType, mealType));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(mealType));
+
+  @JsonKey(ignore: true)
+  @override
+  $SelectMealCopyWith<SelectMeal> get copyWith =>
+      _$SelectMealCopyWithImpl<SelectMeal>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadReport,
+    required TResult Function(MealType mealType) selectMeal,
+  }) {
+    return selectMeal(mealType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadReport,
+    TResult Function(MealType mealType)? selectMeal,
+  }) {
+    return selectMeal?.call(mealType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadReport,
+    TResult Function(MealType mealType)? selectMeal,
+    required TResult orElse(),
+  }) {
+    if (selectMeal != null) {
+      return selectMeal(mealType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadReport value) loadReport,
+    required TResult Function(SelectMeal value) selectMeal,
+  }) {
+    return selectMeal(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoadReport value)? loadReport,
+    TResult Function(SelectMeal value)? selectMeal,
+  }) {
+    return selectMeal?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadReport value)? loadReport,
+    TResult Function(SelectMeal value)? selectMeal,
+    required TResult orElse(),
+  }) {
+    if (selectMeal != null) {
+      return selectMeal(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectMeal implements ReportEvent {
+  const factory SelectMeal(MealType mealType) = _$SelectMeal;
+
+  MealType get mealType;
+  @JsonKey(ignore: true)
+  $SelectMealCopyWith<SelectMeal> get copyWith =>
+      throw _privateConstructorUsedError;
 }

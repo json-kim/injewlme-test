@@ -20,10 +20,12 @@ class _$ReportStateTearOff {
 
   _ReportState call(
       {bool isLoading = false,
+      MealType? selecteMealType = null,
       required DateTime date,
       DietReport? dietReport = null}) {
     return _ReportState(
       isLoading: isLoading,
+      selecteMealType: selecteMealType,
       date: date,
       dietReport: dietReport,
     );
@@ -36,6 +38,7 @@ const $ReportState = _$ReportStateTearOff();
 /// @nodoc
 mixin _$ReportState {
   bool get isLoading => throw _privateConstructorUsedError;
+  MealType? get selecteMealType => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
   DietReport? get dietReport => throw _privateConstructorUsedError;
 
@@ -49,7 +52,11 @@ abstract class $ReportStateCopyWith<$Res> {
   factory $ReportStateCopyWith(
           ReportState value, $Res Function(ReportState) then) =
       _$ReportStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, DateTime date, DietReport? dietReport});
+  $Res call(
+      {bool isLoading,
+      MealType? selecteMealType,
+      DateTime date,
+      DietReport? dietReport});
 }
 
 /// @nodoc
@@ -63,6 +70,7 @@ class _$ReportStateCopyWithImpl<$Res> implements $ReportStateCopyWith<$Res> {
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? selecteMealType = freezed,
     Object? date = freezed,
     Object? dietReport = freezed,
   }) {
@@ -71,6 +79,10 @@ class _$ReportStateCopyWithImpl<$Res> implements $ReportStateCopyWith<$Res> {
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      selecteMealType: selecteMealType == freezed
+          ? _value.selecteMealType
+          : selecteMealType // ignore: cast_nullable_to_non_nullable
+              as MealType?,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -90,7 +102,11 @@ abstract class _$ReportStateCopyWith<$Res>
           _ReportState value, $Res Function(_ReportState) then) =
       __$ReportStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, DateTime date, DietReport? dietReport});
+  $Res call(
+      {bool isLoading,
+      MealType? selecteMealType,
+      DateTime date,
+      DietReport? dietReport});
 }
 
 /// @nodoc
@@ -106,6 +122,7 @@ class __$ReportStateCopyWithImpl<$Res> extends _$ReportStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? selecteMealType = freezed,
     Object? date = freezed,
     Object? dietReport = freezed,
   }) {
@@ -114,6 +131,10 @@ class __$ReportStateCopyWithImpl<$Res> extends _$ReportStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      selecteMealType: selecteMealType == freezed
+          ? _value.selecteMealType
+          : selecteMealType // ignore: cast_nullable_to_non_nullable
+              as MealType?,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -130,11 +151,17 @@ class __$ReportStateCopyWithImpl<$Res> extends _$ReportStateCopyWithImpl<$Res>
 
 class _$_ReportState implements _ReportState {
   const _$_ReportState(
-      {this.isLoading = false, required this.date, this.dietReport = null});
+      {this.isLoading = false,
+      this.selecteMealType = null,
+      required this.date,
+      this.dietReport = null});
 
   @JsonKey()
   @override
   final bool isLoading;
+  @JsonKey()
+  @override
+  final MealType? selecteMealType;
   @override
   final DateTime date;
   @JsonKey()
@@ -143,7 +170,7 @@ class _$_ReportState implements _ReportState {
 
   @override
   String toString() {
-    return 'ReportState(isLoading: $isLoading, date: $date, dietReport: $dietReport)';
+    return 'ReportState(isLoading: $isLoading, selecteMealType: $selecteMealType, date: $date, dietReport: $dietReport)';
   }
 
   @override
@@ -152,6 +179,8 @@ class _$_ReportState implements _ReportState {
         (other.runtimeType == runtimeType &&
             other is _ReportState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality()
+                .equals(other.selecteMealType, selecteMealType) &&
             const DeepCollectionEquality().equals(other.date, date) &&
             const DeepCollectionEquality()
                 .equals(other.dietReport, dietReport));
@@ -161,6 +190,7 @@ class _$_ReportState implements _ReportState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(selecteMealType),
       const DeepCollectionEquality().hash(date),
       const DeepCollectionEquality().hash(dietReport));
 
@@ -173,11 +203,14 @@ class _$_ReportState implements _ReportState {
 abstract class _ReportState implements ReportState {
   const factory _ReportState(
       {bool isLoading,
+      MealType? selecteMealType,
       required DateTime date,
       DietReport? dietReport}) = _$_ReportState;
 
   @override
   bool get isLoading;
+  @override
+  MealType? get selecteMealType;
   @override
   DateTime get date;
   @override

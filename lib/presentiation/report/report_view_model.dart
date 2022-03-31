@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:injewlme/domain/model/meal.dart';
 
 import 'package:injewlme/domain/usecase/get_diet_report_use_case.dart';
 import 'package:injewlme/presentiation/report/report_event.dart';
@@ -9,14 +10,19 @@ class ReportViewModel with ChangeNotifier {
 
   ReportViewModel(this._getDietReportUseCase, {DateTime? date})
       : _state = ReportState(date: date ?? DateTime.now()) {
-    // _loadReport();
+    _loadReport();
   }
 
   ReportState _state;
   ReportState get state => _state;
 
   void onEvent(ReportEvent event) {
-    event.when(loadReport: _loadReport);
+    event.when(loadReport: _loadReport, selectMeal: _selectMeal);
+  }
+
+  void _selectMeal(MealType mealType) {
+    _state = _state.copyWith(selecteMealType: mealType);
+    notifyListeners();
   }
 
   Future<void> _loadReport() async {

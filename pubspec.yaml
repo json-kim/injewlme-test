@@ -33,6 +33,7 @@ dependencies:
   # ui
   cupertino_icons: ^1.0.2
   responsive_sizer: ^3.0.5+1
+  fl_chart: ^0.50.0
 
   # util
   logger: ^1.1.0
