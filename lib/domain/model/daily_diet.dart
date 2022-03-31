@@ -26,4 +26,8 @@ class DailyDiet {
       'dinner': dinner.toJson(),
     };
   }
+
+  @override
+  String toString() =>
+      'DailyDiet(breakFast: $breakFast, launch: $launch, dinner: $dinner)';
 }

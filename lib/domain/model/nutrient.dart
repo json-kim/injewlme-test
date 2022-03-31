@@ -36,4 +36,9 @@ class Nutrient {
       'saturatedFattyAcid': saturatedFattyAcid,
     };
   }
+
+  @override
+  String toString() {
+    return 'Nutrient(carbohydrate: $carbohydrate, protein: $protein, fat: $fat, dietaryFiber: $dietaryFiber, cholesterol: $cholesterol, saturatedFattyAcid: $saturatedFattyAcid)';
+  }
 }
