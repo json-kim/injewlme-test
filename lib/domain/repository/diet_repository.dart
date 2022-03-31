@@ -1,9 +1,9 @@
 import 'package:injewlme/domain/model/daily_diet.dart';
 
 abstract class DietRepository {
-  Future<DailyDiet> loadDailyDiet({DateTime? date});
+  Future<DailyDiet> loadDailyDiet(int year, int month, int day);
 
-  Future<List<DailyDiet>> loadWeeklyDiet({DateTime? date});
+  Future<List<DailyDiet>> loadWeeklyDiet(int year, int month, int week);
 
-  Future<List<DailyDiet>> loadMonthlyDiet({DateTime? date});
+  Future<List<DailyDiet>> loadMonthlyDiet(int year, int month);
 }

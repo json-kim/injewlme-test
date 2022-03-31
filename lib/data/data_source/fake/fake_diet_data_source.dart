@@ -3,11 +3,7 @@ import 'dart:convert';
 import 'package:injewlme/domain/model/daily_diet.dart';
 
 class FakeDietDataSource {
-  Future<DailyDiet> requestDailyDiet(DateTime date) async {
-    final year = date.year;
-    final month = date.month;
-    final day = date.day;
-
+  Future<DailyDiet> requestDailyDiet(int year, int month, int day) async {
     final jsonDiet = jsonDecode(fakeData)['diet'];
 
     final todayDiet = DailyDiet.fromJson(jsonDiet);

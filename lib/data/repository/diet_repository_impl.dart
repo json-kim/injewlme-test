@@ -8,20 +8,20 @@ class DietRepositoryImpl implements DietRepository {
   DietRepositoryImpl(this._dataSource);
 
   @override
-  Future<DailyDiet> loadDailyDiet({DateTime? date}) async {
-    final result = await _dataSource.requestDailyDiet(date ??= DateTime.now());
+  Future<DailyDiet> loadDailyDiet(int year, int month, int day) async {
+    final result = await _dataSource.requestDailyDiet(year, month, day);
 
     return result;
   }
 
   @override
-  Future<List<DailyDiet>> loadMonthlyDiet({DateTime? date}) {
+  Future<List<DailyDiet>> loadMonthlyDiet(int year, int month) {
     // TODO: implement loadMonthlyDiet
     throw UnimplementedError();
   }
 
   @override
-  Future<List<DailyDiet>> loadWeeklyDiet({DateTime? date}) {
+  Future<List<DailyDiet>> loadWeeklyDiet(int year, int month, int week) {
     // TODO: implement loadWeeklyDiet
     throw UnimplementedError();
   }

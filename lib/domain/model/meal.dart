@@ -5,6 +5,9 @@ class Meal {
   final Dish mainDish; // 메인 요리
   final List<Dish> dishes; // 요리들
 
+  int get totalKcal => dishes.fold<int>(mainDish.kcal,
+      (previousValue, dish) => previousValue + dish.kcal); // 총 칼로리
+
   Meal({
     required this.mealType,
     required this.mainDish,

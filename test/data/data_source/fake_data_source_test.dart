@@ -6,8 +6,10 @@ void main() {
   test('fake data source test', () async {
     final logger = Logger();
     final fakeDataSource = FakeDietDataSource();
+    final date = DateTime.now();
 
-    final diet = await fakeDataSource.requestDailyDiet(DateTime.now());
+    final diet =
+        await fakeDataSource.requestDailyDiet(date.year, date.month, date.day);
 
     logger.i(diet);
   });

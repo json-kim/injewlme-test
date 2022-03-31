@@ -9,8 +9,11 @@ class ReportScreen extends StatelessWidget {
     return Scaffold(
         body: Padding(
       padding: EdgeInsets.symmetric(horizontal: 4.w),
-      child: ListView(
-        children: [],
+      child: RefreshIndicator(
+        onRefresh: () async {},
+        child: ListView(
+          children: [],
+        ),
       ),
     ));
   }
